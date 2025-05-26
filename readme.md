@@ -1,6 +1,4 @@
 
-
-```markdown
 # Kubernetes Ingress: Hostnamen-basiertes Routing mit Docker Desktop
 
 Dieses Projekt demonstriert fortgeschrittenes Routing mit Kubernetes Ingress unter Verwendung von Docker Desktop. Traffic wird basierend auf einem Hostnamen (`myapp.local`) und verschiedenen Pfaden (`/` und `/api`) an unterschiedliche Services (Nginx und HTTPBin) weitergeleitet.
@@ -13,18 +11,7 @@ Dieses Projekt demonstriert fortgeschrittenes Routing mit Kubernetes Ingress unt
 
 ## Projektstruktur
 
-*   `.` (Hauptverzeichnis des Projekts)
-    *   `k8s/` (Verzeichnis für Kubernetes YAML-Dateien)
-        *   `nginx-app.yaml`: Deployment und Service für Nginx
-        *   `httpbin-app.yaml`: Deployment und Service für HTTPBin
-        *   `my-ingress.yaml`: Ingress-Ressource für das Routing
-    *   `assets/` (Verzeichnis für Screenshots)
-        *   `deployed-resources.png`: Nachweis der deployten Kubernetes-Ressourcen
-        *   `nginx-welcome.png`: Screenshot der Nginx Willkommensseite
-        *   `httpbin-response.png`: Screenshot der HTTPBin Antwort
-        *   `hosts-file.png`: (Optional) Screenshot des Eintrags in der Hosts-Datei
-    *   `reflexion.md`: Schriftliche Antworten auf die Reflexionsfragen
-    *   `README.md`: Diese Dokumentationsdatei
+![alt text](image.png)
 
 ## Voraussetzungen
 
@@ -101,9 +88,6 @@ Detaillierte Informationen zur Ingress-Ressource können mit folgendem Befehl ei
 kubectl describe ingress app-hostname-ingress
 ```
 
-**Nachweis der deployten Ressourcen:**
-Die erfolgreiche Erstellung der Deployments, Services und der Ingress-Ressource ist hier dokumentiert:
-
 
 ### 6. Lokale Hosts-Datei anpassen
 
@@ -118,8 +102,6 @@ Füge folgende Zeile hinzu:
 ```
 Speichere die Datei. Gegebenenfalls muss der DNS-Cache des Systems geleert oder der Browser neu gestartet werden.
 
-**(Optional) Inhalt der Hosts-Datei:**
-Der relevante Eintrag in der Hosts-Datei:
 
 
 ### 7. Zugriff mit Hostnamen testen
@@ -129,13 +111,14 @@ Der relevante Eintrag in der Hosts-Datei:
 1.  **Zugriff auf Nginx:** Rufe `http://myapp.local/` auf.
     Die Willkommensseite von Nginx sollte angezeigt werden.
 
-    
+  
 
 2.  **Zugriff auf HTTPBin:** Rufe `http://myapp.local/api/anything` auf.
     Eine JSON-Antwort vom HTTPBin Service sollte erscheinen, die Details der Anfrage an den Pfad `/anything` zeigt.
 
+   
 
-3.  **(Optional) Zugriff auf einen nicht definierten Pfad:** Rufe `http://myapp.local/some/other/path` auf.
+3.  ** Zugriff auf einen nicht definierten Pfad:** Rufe `http://myapp.local/some/other/path` auf.
     Da kein Default Backend definiert ist und dieser Pfad keiner Regel entspricht, sollte eine 404-Fehlerseite des NGINX Ingress Controllers angezeigt werden.
 
 ### 8. Aufräumen
