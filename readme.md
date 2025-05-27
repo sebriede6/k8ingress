@@ -42,7 +42,7 @@ kubectl wait --namespace ingress-nginx \
   --selector=app.kubernetes.io/component=controller \
   --timeout=180s
 ```
-*Hinweis: Die verwendete Version `v1.10.1` ist zum Zeitpunkt der Erstellung aktuell. Es empfiehlt sich, die [NGINX Ingress Quick Start Seite](https://kubernetes.github.io/ingress-nginx/deploy/#quick-start) für die neueste Version zu konsultieren.*
+*Hinweis: Die verwendete Version `v1.12.1` ist zum Zeitpunkt der Erstellung aktuell. Es empfiehlt sich, die [NGINX Ingress Quick Start Seite](https://kubernetes.github.io/ingress-nginx/deploy/#quick-start) für die neueste Version zu konsultieren.*
 
 Der `ingressClassName` in `k8s/my-ingress.yaml` ist auf `nginx` gesetzt. Dies sollte mit dem Namen des installierten Ingress Controllers übereinstimmen. Dies kann mit `kubectl get ingressclass` überprüft werden.
 
